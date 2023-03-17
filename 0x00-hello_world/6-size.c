@@ -1,11 +1,11 @@
 #include <stdio.h>
-/** 
+/**
  * main - a prgram that prints size
- * Return 0 (Success) 
+ * Return 0 (Success)
  */
 int main(void)
 {
- 	char a;
+	char a;
 	int b;
 	long int c;
 	long long int d;
