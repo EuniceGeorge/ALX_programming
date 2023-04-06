@@ -7,22 +7,27 @@
 *@dest: Value to return
 *@src: value to concate
 *
-*Return: values
+* Return: O value to retn
 */
+
 
 char *_strcat(char *dest, char *src)
 {
-	int i;
-	int destlen;
-	int srclen;
+	int i = 0, j = 0;
 
-	for (i = 0; i != '\0'; i++)
-		destlen++;
-	for (j = 0; j != '\0'; j++)
-		srclen++;
-	for (j = 0; j <= src[j]; j++)
+	while (*(dest + i) != '\0')
+	{
+		i++;
+	}
 
-		dest[destlen + i] = src[j];
+	while (j  >= 0)
+	{
+		*(dest + i) = *(src + j);
+		if (*(src + j) == '\0')
+			break;
+		i++;
+		j++;
+	}
 	return (dest);
 }
 
