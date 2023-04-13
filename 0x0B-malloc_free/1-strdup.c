@@ -24,7 +24,7 @@ val = malloc(sizeof(char) * (i + 1));
 	if (val == NULL)
 		return (NULL);
 
-	for (r = 0; str[r]; r++
+	for (r = 0; str[r]; r++)
 		val[r] = str[r];
 
 	return (val);
