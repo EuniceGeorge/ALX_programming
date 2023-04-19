@@ -1,27 +1,25 @@
 #include "main.h"
 #include <stdio.h>
 /**
-  * checker - checks recursively the input from is_prime_number
-  * @n: iterator
-  * @base: base number to check
-  * Return: 1 if n is a prime, else return 0 otherwise.
-  */
+ * checker - checks the input number from n to the base
+ * @n: number is squared and compared against base
+ * @base: base number to check
+ * Return: natural square root of number base
+ */
 int checker(int n, int base)
 {
-	if (base % n == 0 || base < 2)
-		return (0);
-	else if (n == base - 1)
-		return (1);
-	else if (base > n)
-		return (checker(n + 1, base));
-	return (1);
+	if (n * n == base)
+		return (n);
+	if (n * n > base)
+		return (-1);
+	return (checker(n + 1, base));
 }
 /**
-  * is_prime_number - checks if the number is a prime number
-  * @n: the number to check
-  * Return: 1 if n is a prime, else return 0 otherwise.
-  */
-int is_prime_number(int n)
+ * _sqrt_recursion - return the natural square root of a number n.
+ * @n: number to check for square roots.
+ * Return: the natural square root of number n
+ */
+int _sqrt_recursion(int n)
 {
-	return (checker(2, n));
+	return (checker(1, n));
 }
