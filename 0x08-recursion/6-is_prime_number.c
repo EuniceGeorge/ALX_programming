@@ -1,43 +1,27 @@
 #include<stdio.h>
 #include "main.h"
 /**
- * _strlen_recursion - returns the length of a string.
- * @s: the string to count
- * Return: length of the string
- */
-int _strlen_recursion(char *s)
+  * checker - checks recursively the input from is_prime_number
+  * @n: iterator
+  * @base: base number to check
+  * Return: 1 if n is a prime, else return 0 otherwise.
+  */
+int checker(int n, int base)
 {
-	if (*s)
-	{
-		s++;
-		return (1 + _strlen_recursion(s));
-	}
-	return (0);
-}
-/**
- * checker - helper function for is_palindrome
- * @str: the string
- * @len: length of string
- * @count: counter of recursion
- * Return: 1 if string is a palindrome, 0 if it is not.
- */
-int checker(char *str, int len, int count)
-{
-	if (count >= len)
+	if (base % n == 0 || base < 2)
+		return (0);
+	else if (n == base - 1)
 		return (1);
-	if (str[len] == str[count])
-		return (checker(str, len - 1, count + 1));
-	return (0);
+	else if (base > n)
+		return (checker(n + 1, base));
+	return (1);
 }
 /**
- * is_palindrome - checks if the string is a palindrome
- * @s: the string to check
- * Return: 1 if string is a palindrome, 0 if it is not.
- */
-int is_palindrome(char *s)
+  * is_prime_number - checks if the number is a prime number
+  * @n: the number to check
+  * Return: 1 if n is a prime, else return 0 otherwise.
+  */
+int is_prime_number(int n)
 {
-	int len = _strlen_recursion(s);
-	int count = 0;
-
-	return (checker(s, len - 1, count));
+	return (checker(2, n));
 }
